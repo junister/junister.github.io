@@ -24,7 +24,7 @@ li{list-style:none}
 
 /* ---- base ---- */
 
-html,body{ 
+html,body{
 	width:100%;
 	height:100%;
 	background:#111;
@@ -42,7 +42,121 @@ canvas{
   display:block;
   vertical-align:bottom;
 }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
 
+    #particles-js {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .centered-container {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .centered-text {
+      font-size: 6vw;
+      font-family: "Comic Sans MS", cursive;
+      opacity: 0; /* Initially hidden */
+      animation: fade-in-title 1.5s ease-in-out forwards; /* Animation for title text */
+    }
+
+    .additional-text {
+      font-size: 1.7vw;
+      margin-top: 1vw;
+      font-family: "Comic Sans MS", cursive;
+      opacity: 0; /* Initially hidden */
+      animation: slide-in-additional 1s ease-in-out forwards, spin-in-additional 1s ease-in-out forwards;
+      animation-delay: 1s; /* Delay additional text animation by 1 second */
+      transform-origin: center;
+    }
+
+    .github-icon {
+      display: flex;
+      justify-content: center;
+      margin-top: 2vh; /* Increase or decrease the value as desired */
+      opacity: 0; /* Initially hidden */
+      animation: slide-in-icon 1s ease-in-out forwards;
+      animation-delay: 2s; /* Delay icon animation by 2 seconds */
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 3vh; /* Adjust the top margin as needed */
+    }
+
+    .icon-container img {
+      margin: 1vw; /* Adjust the horizontal spacing between icons as needed */
+    }
+
+    @media (max-width: 768px) {
+      .centered-text {
+        font-size: 14vw;
+      }
+
+      .additional-text {
+        font-size: 4vw;
+        margin-top: 3vw;
+      }
+    }
+
+    /* Animation keyframes for title text */
+    @keyframes fade-in-title {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Animation keyframes for additional text sliding in from left */
+    @keyframes slide-in-additional {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Animation keyframes for additional text spinning in */
+    @keyframes spin-in-additional {
+      0% {
+        opacity: 0;
+        transform: rotate(-360deg);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(0);
+      }
+    }
+
+    /* Animation keyframes for icons sliding in from left */
+    @keyframes slide-in-icon {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
 /* ---- stats.js ---- */
 
